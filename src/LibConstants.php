@@ -7,6 +7,6 @@ namespace iRacingPHP;
  */
 class LibConstants
 {
-    public const APIURL = 'https://members-ng.iracing.com/data';
-    public const COOKIEJAR = '/tmp/iracingphpcookie';
+    const APIURL = 'https://members-ng.iracing.com/data';
+    const COOKIEJAR = '/tmp/iracingphpcookie';
 }

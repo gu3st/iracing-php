@@ -4,7 +4,7 @@ namespace iRacingPHP;
 
 class DataClass
 {
-    protected Api $api;
+    protected $api;
 
     function __construct(Api $api)
     {

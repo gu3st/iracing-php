@@ -13,16 +13,20 @@ use iRacingPHP\Exceptions\DataRequestFailedException;
 
 class Api
 {
-    private string $username;
-    private string $loginHash;
+    private $username;
+    private $loginHash;
 
-    private FileCookieJar $jar;
-    private \GuzzleHttp\Client $guzzle;
+    private $jar;
+    private $guzzle;
 
-    public RateLimits $rateLimits;
+    public $rateLimits;
 
-    function __construct(string $username, string $password, string $cookiejar)
+    function __construct($username, $password, $cookiejar)
     {
+        if(!is_string($username) || !is_string($password) || !is_string($cookiejar)) {
+            throw new \Exception("Cannot construct iracing-php API. Missing parameters!");
+        }
+
         $this->username = $username;
         $this->loginHash = $this->hashLogin($username, $password);
         $this->jar = new FileCookieJar($cookiejar);

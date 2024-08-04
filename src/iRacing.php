@@ -19,24 +19,73 @@ use iRacingPHP\Data\Track;
 
 class iRacing
 {
-    public Api $api;
-    public Car $car;
-    public CarClass $carclass;
-    public Constants $constants;
-    public Hosted $hosted;
-    public League $league;
-    public Lookup $lookup;
-    public Member $member;
-    public Results $results;
-    public Season $season;
-    public Series $series;
-    public Stats $stats;
-    public Team $team;
-    public Track $track;
-    public TimeAttack $time_attack;
+    /**
+     * @var Api
+     */
+    public $api;
+    /**
+     * @var Car
+     */
+    public $car;
+    /**
+     * @var CarClass
+     */
+    public $carclass;
+    /**
+     * @var Constants
+     */
+    public $constants;
+    /**
+     * @var Hosted
+     */
+    public $hosted;
+    /**
+     * @var League
+     */
+    public $league;
+    /**
+     * @var Lookup
+     */
+    public $lookup;
+    /**
+     * @var Member
+     */
+    public $member;
+    /**
+     * @var Results
+     */
+    public $results;
+    /**
+     * @var Season
+     */
+    public $season;
+    /**
+     * @var Series
+     */
+    public $series;
+    /**
+     * @var Stats
+     */
+    public $stats;
+    /**
+     * @var Team
+     */
+    public $team;
+    /**
+     * @var Track
+     */
+    public $track;
+    /**
+     * @var TimeAttack
+     */
+    public $time_attack;
     
-    function __construct(string $username, string $password, $cookiejar = LibConstants::COOKIEJAR)
+    function __construct($username, $password, $cookiejar = LibConstants::COOKIEJAR)
     {
+        if(!is_string($username) || !is_string($password) || !is_string($cookiejar)) {
+            throw new \Exception("Cannot construct iracing-php class iRacing. Missing parameters!");
+        }
+
         $this->api = new Api($username, $password, $cookiejar);
 
         $this->car = new Car($this->api);

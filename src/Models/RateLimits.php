@@ -4,7 +4,16 @@ namespace iRacingPHP\Models;
 
 class RateLimits
 {
-    public int $limit;
-    public int $remaining;
-    public int $reset;
+    /**
+     * @var int
+     */
+    public $limit;
+    /**
+     * @var int
+     */
+    public $remaining;
+    /**
+     * @var int
+     */
+    public $reset;
 }
