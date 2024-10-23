@@ -14,7 +14,7 @@ class Lookup extends DataClass
      * @param integer $season_quarter
      * @return mixed
      */
-    public function club_history(int $season_year, int $season_quarter)
+    public function club_history($season_year, $season_quarter)
     {
         $params = [
             'season_year' => $season_year,
@@ -36,7 +36,7 @@ class Lookup extends DataClass
      * @param int ['league_id'] Narrow the search to the roster of the given league.
      * @return mixed
      */
-    public function drivers(string $search_term, array $params = [])
+    public function drivers($search_term, array $params = [])
     {
         $params['search_term'] = $search_term;
         return $this->api->request('/lookup/drivers', $params);

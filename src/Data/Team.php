@@ -11,7 +11,7 @@ class Team extends DataClass
      * @param boolean ['include_licenses'] For faster responses, only request when necessary.
      * @return mixed
      */
-    public function get(int $team_id, array $params = [])
+    public function get($team_id, array $params = [])
     {
         $params['team_id'] = $team_id;
         return $this->api->request('/team/get', $params);

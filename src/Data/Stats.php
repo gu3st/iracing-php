@@ -33,7 +33,7 @@ class Stats extends DataClass
      * @param integer $event_type The event type code for the division type: 4 - Time Trial; 5 - Race
      * @return mixed
      */
-    public function member_division(int $season_id, int $event_type)
+    public function member_division($season_id, $event_type)
     {
         $params = array(
             'season_id' => $season_id,
@@ -88,7 +88,7 @@ class Stats extends DataClass
      * @param integer ['race_week_num'] The first race week of a season is 0.
      * @return mixed
      */
-    public function season_driver_standings(int $season_id, int $car_class_id, array $params = [])
+    public function season_driver_standings($season_id, $car_class_id, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -103,7 +103,7 @@ class Stats extends DataClass
      * @param integer ['race_week_num'] The first race week of a season is 0.
      * @return mixed
      */
-    public function season_supersession_standings(int $season_id, int $car_class_id, array $params = [])
+    public function season_supersession_standings($season_id, $car_class_id, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -116,7 +116,7 @@ class Stats extends DataClass
      * @param integer ['race_week_num'] The first race week of a season is 0.
      * @return mixed
      */
-    public function season_team_standings(int $season_id, int $car_class_id, array $params = [])
+    public function season_team_standings($season_id, $car_class_id, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -131,7 +131,7 @@ class Stats extends DataClass
      * @param integer ['race_week_num'] The first race week of a season is 0.
      * @return mixed
      */
-    public function season_tt_standings(int $season_id, int $car_class_id, array $params = [])
+    public function season_tt_standings($season_id, $car_class_id, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -146,7 +146,7 @@ class Stats extends DataClass
      * @param integer ['division'] Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
      * @return mixed
      */
-    public function season_tt_results(int $season_id, int $car_class_id, int $race_week_num, array $params = [])
+    public function season_tt_results($season_id, $car_class_id, $race_week_num, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -162,7 +162,7 @@ class Stats extends DataClass
      * @param integer ['division'] Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
      * @return mixed
      */
-    public function season_qualify_results(int $season_id, int $car_class_id, int $race_week_num, array $params = [])
+    public function season_qualify_results($season_id, $car_class_id, $race_week_num, array $params = [])
     {
         $params['season_id'] = $season_id;
         $params['car_class_id'] = $car_class_id;
@@ -177,7 +177,7 @@ class Stats extends DataClass
      * @param integer ['season_quarter'] Limit best times to a given quarter; only applicable when year is used.
      * @return mixed
      */
-    public function world_records(int $car_id, int $track_id, array $params = [])
+    public function world_records($car_id, $track_id, array $params = [])
     {
         $params['car_id'] = $car_id;
         $params['track_id'] = $track_id;

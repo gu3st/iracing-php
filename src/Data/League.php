@@ -43,7 +43,7 @@ class League extends DataClass
      * @param boolean ['include_licenses'] For faster responses, only request when necessary.
      * @return mixed
      */
-    public function get(int $league_id, array $params = [])
+    public function get($league_id, array $params = [])
     {
         $params['league_id'] = $league_id;
         return $this->api->request('/league/get', $params);
@@ -54,7 +54,7 @@ class League extends DataClass
      * @param integer ['season_id'] If included and the season is using custom points (points_system_id:2) then the custom points option is included in the returned list. Otherwise the custom points option is not returned.
      * @return mixed
      */
-    public function get_points_systems(int $league_id, array $params = [])
+    public function get_points_systems($league_id, array $params = [])
     {
         $params['league_id'] = $league_id;
         return $this->api->request('/league/get_points_systems', $params);
@@ -75,7 +75,7 @@ class League extends DataClass
      * @param boolean ['retired'] If true include seasons which are no longer active.
      * @return mixed
      */
-    public function seasons(int $league_id, array $params = [])
+    public function seasons($league_id, array $params = [])
     {
         $params['league_id'] = $league_id;
         return $this->api->request('/league/seasons', $params);
@@ -89,7 +89,7 @@ class League extends DataClass
      * @param boolean ['results_only'] If true include only sessions for which results are available.
      * @return mixed
      */
-    public function season_standings(int $league_id, int $season_id, array $params = [])
+    public function season_standings($league_id, $season_id, array $params = [])
     {
         $params['league_id'] = $league_id;
         $params['season_id'] = $season_id;
@@ -102,7 +102,7 @@ class League extends DataClass
      * @param boolean ['results_only'] If true include only sessions for which results are available.
      * @return mixed
      */
-    public function season_sessions(int $league_id, int $season_id, array $params = [])
+    public function season_sessions($league_id, $season_id, array $params = [])
     {
         $params['league_id'] = $league_id;
         $params['season_id'] = $season_id;

@@ -29,7 +29,7 @@ class Series extends DataClass
      *
      * @return mixed
      */
-    public function past_sessions(int $series_id)
+    public function past_sessions($series_id)
     {
         $params = [
             'series_id' => $series_id
