@@ -59,7 +59,7 @@ class Api
      * @param string $password
      * @return string
      */
-    private function hashLogin(string $username, string $password)
+    private function hashLogin($username, $password)
     {
         $concat = mb_convert_encoding($password . strtolower($username), 'UTF-8');
         $hash = hash('sha256', $concat, true);
@@ -106,7 +106,7 @@ class Api
      * @return mixed
      * @throws DataRequestFailedException
      */
-    private function retrieveData(string $url)
+    private function retrieveData($url)
     {
         try
         {
@@ -135,7 +135,7 @@ class Api
      * @return mixed
      * @throws DataRequestFailedException
      */
-    private function retrieveChunks(mixed $chunks)
+    private function retrieveChunks($chunks)
     {
         $result = [];
         try
@@ -163,7 +163,7 @@ class Api
      * @param array $data Optional parameters to be passed with the request
      * @return mixed Requested data
      */
-    public function request(string $endpoint, array $data = [])
+    public function request($endpoint, array $data = [])
     {
         $url = LibConstants::APIURL . $endpoint;
         try
@@ -220,7 +220,7 @@ class Api
      * @throws SiteMaintenanceException
      * @throws RequestFailedException|AuthenticationFailedException
      */
-    private function shouldRetryRequest(\GuzzleHttp\Psr7\Response $response, string $message, \Exception $oldEx)
+    private function shouldRetryRequest(\GuzzleHttp\Psr7\Response $response, $message, \Exception $oldEx)
     {
         switch($response->getStatusCode())
         {

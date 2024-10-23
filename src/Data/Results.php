@@ -14,7 +14,7 @@ class Results extends DataClass
      * @param boolean ['include_licenses']
      * @return mixed
      */
-    public function get(int $subsession_id, array $params = [])
+    public function get($subsession_id, array $params = [])
     {
         $params['subsession_id'] = $subsession_id;
         return $this->api->request('/results/get', $params);
@@ -25,7 +25,7 @@ class Results extends DataClass
      * @param integer $simsession_number The main event is 0; the preceding event is -1, and so on.
      * @return mixed
      */
-    public function event_log(int $subsession_id, int $simsession_number)
+    public function event_log($subsession_id, $simsession_number)
     {
         $params = [
             'subsession_id' => $subsession_id,
@@ -39,7 +39,7 @@ class Results extends DataClass
      * @param integer $simsession_number The main event is 0; the preceding event is -1, and so on.
      * @return mixed
      */
-    public function lap_chart_data(int $subsession_id, int $simsession_number)
+    public function lap_chart_data($subsession_id, $simsession_number)
     {
         $params = [
             'subsession_id' => $subsession_id,
@@ -55,7 +55,7 @@ class Results extends DataClass
      * @param integer ['team_id'] Required if the subsession was a team event.
      * @return mixed
      */
-    public function lap_data(int $subsession_id, int $simsession_number, array $params = [])
+    public function lap_data($subsession_id, $simsession_number, array $params = [])
     {
         $params['subsession_id'] = $subsession_id;
         $params['simsession_number'] = $simsession_number;
@@ -123,7 +123,7 @@ class Results extends DataClass
      * @param integer ['race_week_num'] The first race week of a season is 0.
      * @return mixed
      */
-    public function season_results(int $season_id, array $params = [])
+    public function season_results($season_id, array $params = [])
     {
         $params['season_id'] = $season_id;
         $results = $this->api->request('/results/season_results', $params);

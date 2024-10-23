@@ -12,7 +12,7 @@ class Season extends DataClass
      * @param integer $season_quarter
      * @return mixed
      */
-    public function list(int $season_year, int $season_quarter)
+    public function list($season_year, $season_quarter)
     {
         $params = [
             'season_year' => $season_year,

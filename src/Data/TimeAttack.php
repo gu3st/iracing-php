@@ -12,7 +12,7 @@ class TimeAttack extends DataClass
      * @param integer $ta_comp_season_id
      * @return mixed
      */
-    public function member_season_results(int $ta_comp_season_id)
+    public function member_season_results($ta_comp_season_id)
     {
         $params = array(
             'ta_comp_season_id' => $ta_comp_season_id,
